@@ -1,2 +1,3 @@
 * {background-color: rgb(108, 175, 7);
-align-content: center;}
+display: float; align-items: center;}
+img {border-width: 10px, black, dotted;}
