@@ -1,3 +1,40 @@
-* {background-color: rgb(108, 175, 7);
-display: float; align-items: center;}
-img {border-width: 10px, black, dotted;}
+html{font-size: 62,5%;}
+* {background-color: black;
+background-repeat: no-repeat;
+display: flex;
+
+justify-content: center;
+align-items:center;}
+
+.form {flex-direction: column;
+align-items: center;
+margin-top: 30px;}
+.main {
+    display:flex;
+    flex-direction: column;
+}
+.input { border-color: silver;
+    border-style: double;
+    border-width: 4px;
+    height: 40px;
+    width: 200px;
+    background-color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 1.6rem;
+    font-weight: bolder;
+
+}
+.button {
+    color: silver;
+    border-style: double;
+    border-width: 4px;
+    height: 40px;
+    width: 150px;
+    background-color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 1.6rem;
+    font-weight: bolder;
+
+}
