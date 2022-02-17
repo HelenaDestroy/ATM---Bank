@@ -37,7 +37,7 @@ function entregarDinero()
           document.write("<br/>" + e.cantidad + " Billetes de $" + e.valor + ".<br/>")
         
         }
-          document.write("Bien... Usted pidió " + parseInt(t.value) + " pesos. Pero tiene que considerar que le cobramos intereses... por lo tanto los " + dinero + " pesos que faltan nos los quedamos nosotros pa' la birra. Gracias!" ); 
+          document.write("<hr/>Bien... Usted pidió " + parseInt(t.value) + " pesos. Pero tiene que considerar que le cobramos intereses... <br/>Por lo tanto los " + dinero + " pesos que faltan nos los quedamos nosotros pa' la birra. Gracias!" ); 
           
         }
     else 
