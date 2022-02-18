@@ -2,10 +2,9 @@ html{ box-sizing: border-box;
     font-size: 62,5%;}
 
 * {background-color: rgb(55, 201, 36);
-display: flex;
 justify-content: center;
 align-items:center;}
-
+body {display: flex;}
 img {
     width: 450px;
     height: 450px;
