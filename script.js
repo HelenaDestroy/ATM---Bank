@@ -28,23 +28,23 @@ function entregarDinero()
               dinero = dinero - (bi.valor * papeles);
           }
         }     
-      document.write("Usted retiró:");  
+        resultado.innerHTML = "Usted retiró:";  
       if (dinero > 0)  
         {
           for (var e of entregado)
           {
+          resultado.innerHTML = "<br/>" + e.cantidad + " Billetes de $" + e.valor + ".<br/>";
          
-          document.write("<br/>" + e.cantidad + " Billetes de $" + e.valor + ".<br/>")
-        
         }
-          document.write("<hr/>Bien... Usted pidió " + parseInt(t.value) + " pesos. Pero tiene que considerar que le cobramos intereses... <br/>Por lo tanto los " + dinero + " pesos que faltan nos los quedamos nosotros pa' la birra. Gracias!" ); 
-          
+        
+        resultado.innerHTML = "<hr/>Bien... Usted pidió " + parseInt(t.value) + " pesos. Pero tiene que considerar que le cobramos intereses... <br/>Por lo tanto los " + dinero + " pesos que faltan nos los quedamos nosotros pa' la birra. Gracias!"; 
+                
         }
     else 
       {  
         for (var e of entregado)
           {
-            document.write ("<hr/>" + e.cantidad + " billetes de $" + e.valor + "<br/>"); 
+            resultado.innerHTML("<hr/>" + e.cantidad + " billetes de $" + e.valor + "<br/>"); 
           } 
           
       }
@@ -62,7 +62,7 @@ var papeles = 0;
 
 var b = document.getElementById("extraer");
 b.addEventListener("click", entregarDinero);
-
+resultado = document.getElementById("parrafojs");
 
 
 
