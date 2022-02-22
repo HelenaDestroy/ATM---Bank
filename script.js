@@ -1,9 +1,12 @@
 class Billete 
 {
-  constructor(v, c)
+  constructor(n, v, c)
   {
+    this.nombre = n;
     this.valor = v;
     this.cantidad = c;
+    this.image = new Image();   
+    this.image.src= image[this.nombre]
   }
 }
 
@@ -24,7 +27,7 @@ function entregarDinero()
               {
                 papeles = div; 
               }  
-              entregado.push (new Billete (bi.valor, papeles) );  
+              entregado.push (new Billete (bi.imagen, bi.valor, papeles) );  
               dinero = dinero - (bi.valor * papeles);
           }
         }     
@@ -33,11 +36,10 @@ if (dinero > 0)
       for (var e of entregado)
         { if (e.cantidad > 0)
           {
-          resultado.innerHTML = resultado.innerHTML + e.cantidad + " billetes de $" + e.valor + ".</br>";
-          }
-               
+              resultado.innerHTML = resultado.innerHTML + e.cantidad + "de billetes de:" + body.appendChild(this.imagen) + ".</br>";
+          }  
         }
-        resultado.innerHTML = resultado.innerHTML + "<hr/>Sabemos que usted pidió " + parseInt(t.value) + " pesos. Pero tiene que considerar que le cobramos intereses... <br/>Por lo tanto los " + dinero + " pesos que faltan nos los quedamos nosotros pa' la birra. Gracias!<br/><br/>  " 
+      resultado.innerHTML = resultado.innerHTML + "<hr/>Usted pidió " + parseInt(t.value) + " pesos. Pero como le cobramos intereses, por lo tanto los " + dinero + " pesos que faltan son nuestros. Gracias!<br/>" + "Usted recibió:" + document.body.appendChild(this.imagen);
     }
     else 
       {  
@@ -49,13 +51,18 @@ if (dinero > 0)
 }
 
 var caja=[];
-var entregado = [];  
-caja.push (new Billete (50, 20) );
-caja.push (new Billete (20, 30) );
-caja.push (new Billete (10, 10) );
+caja.push (new Billete ("cincuenta", 50, 20) );
+caja.push (new Billete ("veinte", 20, 30) );
+caja.push (new Billete ("diez", 10, 10) );
 var dinero = 0;  
 var div = 0;
 var papeles = 0;
+var entregado = [];
+
+var image ;
+image("cincuenta") = "50.png";
+image("veinte") = "20.png";
+image("diez") = "10.png";
 
 var b = document.getElementById("extraer");
 b.addEventListener("click", entregarDinero);
