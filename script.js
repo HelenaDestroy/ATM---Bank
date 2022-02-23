@@ -17,42 +17,41 @@ function entregarDinero()
 { 
   var t = document.getElementById("usuario");
   dinero = parseInt(t.value);
-          for(var bi of caja)  
-        {  
-          if (dinero > 0)         
-          { 
-            div = Math.floor(dinero / bi.valor);
-            if   (div > bi.cantidad)
-              {
-                papeles = bi.cantidad;
-              }
-             else 
-              {
-                papeles = div; 
-              }  
-              entregado.push (new Billete (bi.nombre, bi.valor, papeles, bi.imagen.src) );  
-              dinero = dinero - (bi.valor * papeles);
-          }
-        }     
+              for(var bi of caja)  
+                {  
+                    if (dinero > 0)         
+                      { div = Math.floor(dinero / bi.valor);
+                        if   (div > bi.cantidad)
+                            {
+                            papeles = bi.cantidad;
+                            }
+                        else 
+                          {
+                            papeles = div; 
+                          }  
+                          entregado.push (new Billete (bi.nombre, bi.valor, papeles, bi.imagen.src) );  
+                          dinero = dinero - (bi.valor * papeles);
+                      }
+                }     
 if (dinero > 0)  
-    {resultado.innerHTML = resultado.innerHTML + "Usted retiró:<br/>" 
-      for (var e of entregado)
-        { if (e.cantidad > 0)
-          {
-              resultado.innerHTML = resultado.innerHTML;  
-              res.appendChild(e.imagen); 
-          }  
-        }
-      resultado.innerHTML = resultado.innerHTML + "<hr/>Usted pidió " + parseInt(t.value) + " pesos. Pero como le cobramos intereses, por lo tanto los " + dinero + " pesos que faltan son nuestros. Gracias!<br/>" + "Usted recibió:"; 
+    {resultado.innerHTML = resultado.innerHTML + "Usted retiró:<br/>"; 
+         for (var e of entregado)
+            { if (e.cantidad > 0)
+                {
+                  resultado.innerHTML = resultado.innerHTML +"billetes de: " +
+                  res.appendChild(e.imagen);
+                 }  
+            }
+      resultado.innerHTML = "<hr/>Usted pidió " + parseInt(t.value) + " pesos. Pero como le cobramos intereses, los " + dinero + " pesos que faltan son nuestros. Gracias!<br/> Retire su dinero: "; 
       res.appendChild(e.imagen);
-    }
-    else 
-      {  
-        for (var e of entregado)
-        {
-          resultado.innerHTML = resultado.innerHTML + "Usted retiró: "; 
-          res.appendChild(e.imagen);
-        } 
+      }
+else 
+   {  
+    for (var e of entregado)
+      {
+        resultado.innerHTML = resultado.innerHTML + "Usted retiró:<br/>";
+        res.appendChild(e.imagen);
+      } 
       }
 }
 
