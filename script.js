@@ -1,14 +1,17 @@
 class Billete 
 {
-  constructor(n, v, c)
-  {
-    this.nombre = n;
-    this.valor = v;
-    this.cantidad = c;
-    this.image = new Image();   
-    this.image.src= image[this.nombre]
-  }
-}
+  constructor(nombre, valor, cantidad, fuente)
+   {this.nombre = nombre;
+    this.valor = valor;
+    this.cantidad = cantidad;
+    this.imagen = new Image();
+    this.imagen.src = fuente;
+     }
+} 
+var caja=[];
+caja.push (new Billete ("cincuenta", 50, 20, "50.png") );
+caja.push (new Billete ("veinte", 20, 30, "20.png") );
+caja.push (new Billete ("diez", 10, 10, "10.png") );
 
 function entregarDinero()
 { 
@@ -27,7 +30,7 @@ function entregarDinero()
               {
                 papeles = div; 
               }  
-              entregado.push (new Billete (bi.imagen, bi.valor, papeles) );  
+              entregado.push (new Billete (bi.nombre, bi.valor, papeles, bi.imagen.src) );  
               dinero = dinero - (bi.valor * papeles);
           }
         }     
@@ -36,10 +39,10 @@ if (dinero > 0)
       for (var e of entregado)
         { if (e.cantidad > 0)
           {
-              resultado.innerHTML = resultado.innerHTML + e.cantidad + "de billetes de:" + body.appendChild(this.imagen) + ".</br>";
+              resultado.innerHTML = resultado.innerHTML + e.cantidad + "de billetes de:" + document.body.appendChild(e.imagen) + ".</br>";
           }  
         }
-      resultado.innerHTML = resultado.innerHTML + "<hr/>Usted pidió " + parseInt(t.value) + " pesos. Pero como le cobramos intereses, por lo tanto los " + dinero + " pesos que faltan son nuestros. Gracias!<br/>" + "Usted recibió:" + document.body.appendChild(this.imagen);
+      resultado.innerHTML = resultado.innerHTML + "<hr/>Usted pidió " + parseInt(t.value) + " pesos. Pero como le cobramos intereses, por lo tanto los " + dinero + " pesos que faltan son nuestros. Gracias!<br/>" + "Usted recibió:" + document.body.appendChild(e.imagen);
     }
     else 
       {  
@@ -50,19 +53,11 @@ if (dinero > 0)
       }
 }
 
-var caja=[];
-caja.push (new Billete ("cincuenta", 50, 20) );
-caja.push (new Billete ("veinte", 20, 30) );
-caja.push (new Billete ("diez", 10, 10) );
+
 var dinero = 0;  
 var div = 0;
 var papeles = 0;
 var entregado = [];
-
-var image ;
-image("cincuenta") = "50.png";
-image("veinte") = "20.png";
-image("diez") = "10.png";
 
 var b = document.getElementById("extraer");
 b.addEventListener("click", entregarDinero);
