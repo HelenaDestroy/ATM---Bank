@@ -39,19 +39,19 @@ if (dinero > 0)
       for (var e of entregado)
         { if (e.cantidad > 0)
           {
-              resultado.innerHTML = resultado.innerHTML + e.cantidad + "de billetes de:</br>";
-              resultado.appendChild(e.imagen); 
+              resultado.innerHTML = resultado.innerHTML;  
+              res.appendChild(e.imagen); 
           }  
         }
       resultado.innerHTML = resultado.innerHTML + "<hr/>Usted pidió " + parseInt(t.value) + " pesos. Pero como le cobramos intereses, por lo tanto los " + dinero + " pesos que faltan son nuestros. Gracias!<br/>" + "Usted recibió:"; 
-      resultado.appendChild(e.imagen);
+      res.appendChild(e.imagen);
     }
     else 
       {  
         for (var e of entregado)
         {
-          resultado.innerHTML = resultado.innerHTML + "Usted retiró: " +  e.cantidad + " billetes de $" + e.valor + ".<br/>"; 
-          resultado.appendChild(e.imagen);
+          resultado.innerHTML = resultado.innerHTML + "Usted retiró: "; 
+          res.appendChild(e.imagen);
         } 
       }
 }
@@ -65,3 +65,4 @@ var entregado = [];
 var b = document.getElementById("extraer");
 b.addEventListener("click", entregarDinero);
 resultado = document.getElementById("parrafojs");
+res = document.getElementById("parrafoimg");
