@@ -39,16 +39,19 @@ if (dinero > 0)
       for (var e of entregado)
         { if (e.cantidad > 0)
           {
-              resultado.innerHTML = resultado.innerHTML + e.cantidad + "de billetes de:" + document.body.appendChild(e.imagen) + ".</br>";
+              resultado.innerHTML = resultado.innerHTML + e.cantidad + "de billetes de:</br>";
+              resultado.appendChild(e.imagen); 
           }  
         }
-      resultado.innerHTML = resultado.innerHTML + "<hr/>Usted pidió " + parseInt(t.value) + " pesos. Pero como le cobramos intereses, por lo tanto los " + dinero + " pesos que faltan son nuestros. Gracias!<br/>" + "Usted recibió:" + document.body.appendChild(e.imagen);
+      resultado.innerHTML = resultado.innerHTML + "<hr/>Usted pidió " + parseInt(t.value) + " pesos. Pero como le cobramos intereses, por lo tanto los " + dinero + " pesos que faltan son nuestros. Gracias!<br/>" + "Usted recibió:"; 
+      resultado.appendChild(e.imagen);
     }
     else 
       {  
         for (var e of entregado)
         {
           resultado.innerHTML = resultado.innerHTML + "Usted retiró: " +  e.cantidad + " billetes de $" + e.valor + ".<br/>"; 
+          resultado.appendChild(e.imagen);
         } 
       }
 }
